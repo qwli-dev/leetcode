@@ -11,7 +11,22 @@ public class CountSort {
   }
   
   
-  public static void sort(int[] arr) {
-  
-  }
+   public static void sort(int[] arr) {
+        int[] count = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i]]++;
+        }
+
+        int[] newArr = new int[arr.length];
+        int j = 0;
+        for (int i = 0; i < count.length; i++) {
+            while (count[i] > 0) {
+                newArr[j++] = i;
+                count[i]--;
+            }
+        }
+
+        System.out.println(Arrays.toString(newArr));
+
+    }
 }
